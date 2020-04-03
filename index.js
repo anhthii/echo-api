@@ -260,6 +260,10 @@ fastify.get("/tracks/:id", async (request, reply) => {
 fastify.get("/streaming/:id", async (request, reply) => {
   const ipRes = await iplocation(request.ip);
   console.log("ipRes", ipRes);
+  const zingMp3URL = zingmp3sdk.composeZingMp3URL(zingmp3Paths.streaming, {
+    id: request.params.id,
+    ctime: zingmp3sdk.ctime()
+  });
   const res = await fetch(zingMp3URL);
   const json = await res.json();
   return json;
@@ -304,7 +308,7 @@ fastify.get("/recommend/:id", async (request, reply) => {
 
 const start = async () => {
   try {
-    await fastify.listen(5000);
+    await fastify.listen(5000, "0.0.0.0");
     fastify.log.info(`server listening on ${fastify.server.address().port}`);
   } catch (err) {
     fastify.log.error(err);
