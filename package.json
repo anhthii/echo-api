@@ -1,0 +1,23 @@
+{
+  "name": "echo-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "start": "npx nodemon index.js",
+    "test": "tap"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^2.13.0",
+    "fastify-cors": "^3.0.3",
+    "iplocation": "^6.1.0",
+    "lodash.pick": "^4.4.0",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2",
+    "tap": "^14.10.7"
+  }
+}
