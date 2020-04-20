@@ -10,6 +10,6 @@ deploy:
     - eval $(ssh-agent -s)
     - echo "$SSH_PRIVATE_KEY" | ssh-add -
     - mkdir -m 700 -p /root/.ssh
-    - ssh -o StrictHostKeyChecking=no deploy@103.92.31.195 "git -C echo-api pull || git clone git@gitlab.com:t-t-solutions/echo-api.git && cd echo-api && sudo docker-compose up -d --build --force-recreate"
+    - ssh -o StrictHostKeyChecking=no deploy@103.92.31.195 "git -C echo-api pull || git clone git@gitlab.com:t-t-solutions/echo-api.git && cd echo-api && docker-compose up -d --build --force-recreate"
   only:
     - master
