@@ -1,6 +1,6 @@
 const zingmp3sdk = require("../../zingmp3sdk");
 const zingmp3Paths = require("../../zingmp3path");
-const fetch = require("node-fetch");
+const fetch = require("../../utils/fetch");
 
 module.exports = (fastify, opts, done) => {
   fastify.get("/chart/:id", async (request, reply) => {
@@ -8,6 +8,7 @@ module.exports = (fastify, opts, done) => {
       id: request.params.id,
       ctime: zingmp3sdk.ctime(),
     });
+    console.log(zingMp3URL)
     const res = await fetch(zingMp3URL);
     const json = await res.json();
     if (!json.data) {

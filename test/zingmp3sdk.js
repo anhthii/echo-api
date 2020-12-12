@@ -21,11 +21,21 @@ tap.equal(
 
 tap.equal(
   zingmp3sdk.computeSignature(
-    "id=ZWAFDUIF&ctime=1585747393",
+    "id=ZWAFWIOZ&ctime=1607765548",
     "/song/get-song-info"
   ),
-  "4f04bad8af365bcb5593c754ce558c0baf99d0a1424ac7f98a34bef53ed507ee5269bb0f102378358a9950b8628372d88498829e044730dfa704f526b6e0eada"
+  "89a9a369580ecf1b336e457a867c72c48f5c1a3b83edb5a65abbe6d39ce799c412b25e07133128c29fa922f98f8c73c44adb726a7ec06af841c919d7051349a7"
 );
+
+tap.equal(
+  zingmp3sdk.computeSignature(
+    "id=ZWDBBADB&ctime=1607766597",
+    "/song/get-song-info"
+  ), 
+  "6d6ea32f5b066e2c5534d966f128438138bea16384daf110c1f47bc52e6fdec5c33aad2e297360595345937081eed8579f4a9e2f93b5523e3c1dabc5a1aae1ab", "new signature"
+)
+
+
 
 tap.equal(
   zingmp3sdk.composeZingMp3URL("/song/get-song-info", {

@@ -1,6 +1,6 @@
 const zingmp3sdk = require("../../zingmp3sdk");
 const zingmp3Paths = require("../../zingmp3path");
-const fetch = require("node-fetch");
+const fetch = require("../../utils/fetch");
 
 module.exports = (fastify, opts, done) => {
   const getAlias = (str) => {

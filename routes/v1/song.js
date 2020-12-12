@@ -1,7 +1,7 @@
 const zingmp3sdk = require("../../zingmp3sdk");
 const zingmp3Paths = require("../../zingmp3path");
 const _pick = require("lodash.pick");
-const fetch = require("node-fetch");
+const fetch = require("../../utils/fetch");
 const iplocation = require("iplocation").default;
 const { isEmpty } = require("../../utils/objectUtil");
 
@@ -29,19 +29,19 @@ module.exports = (fastify, opts, done) => {
       data: {
         artist: !isEmpty(json.data.artist)
           ? json.data.artist.items.map((item) => ({
-              thumbnail: item.thumbnail,
-              alias: getArtistAlias(item.link),
-              name: item.name,
-            }))
+            thumbnail: item.thumbnail,
+            alias: getArtistAlias(item.link),
+            name: item.name,
+          }))
           : [],
         song: !isEmpty(json.data.song)
           ? json.data.song.items.map((item) => ({
-              id: item.id,
-              title: item.title,
-              alias: item.alias,
-              artists_names: item.artists_names,
-              streaming_status: item.streaming_status,
-            }))
+            id: item.id,
+            title: item.title,
+            alias: item.alias,
+            artists_names: item.artists_names,
+            streaming_status: item.streaming_status,
+          }))
           : [],
       },
     };
