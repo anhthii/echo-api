@@ -8,7 +8,6 @@ module.exports = (fastify, opts, done) => {
       id: request.params.id,
       ctime: zingmp3sdk.ctime(),
     });
-    console.log(zingMp3URL)
     const res = await fetch(zingMp3URL);
     const json = await res.json();
     if (!json.data) {

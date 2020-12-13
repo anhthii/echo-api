@@ -17,7 +17,8 @@
     "fastify-rate-limit": "^3.0.1",
     "iplocation": "^6.1.0",
     "lodash.pick": "^4.4.0",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.0",
+    "set-cookie-parser": "^2.4.6"
   },
   "devDependencies": {
     "nodemon": "^2.0.2",
